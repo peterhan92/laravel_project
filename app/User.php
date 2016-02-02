@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
@@ -23,4 +24,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    # a user can have many posts
+    public function Posts() 
+    {
+        return $this->hasMany('App\Post');
+    }
 }
