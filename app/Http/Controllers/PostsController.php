@@ -21,7 +21,12 @@ class PostsController extends Controller
 	# display all posts ordered by update
     public function index() 
     {
-    	$posts = Post::latest('Updated_at')->published()->get();
+    	$posts = Post::latest('Updated_at')->get();
+        // if (count(Tag::all()) < 1) {
+        //     $tag = new Tag;
+        //     $tag->name = 'testing';
+        //     $tag->save();
+        // }
         
     	return view('posts.index')->with('posts', $posts);
     }
@@ -70,12 +75,21 @@ class PostsController extends Controller
     	$post = Post::findorfail($id);
 
     	$post->update($request->all());
-
+        
         $post->tags()->sync($request->input('tag_list'));
 
         session()->flash('flash_message', 'Your post has been updated!');
 
     	return redirect('posts');
+    }
+    # delete post
+    public function destroy($id)
+    {
+        $post = Post::findorfail($id);
+
+        $post->delete();
+
+        return redirect('posts');
     }
 
 }

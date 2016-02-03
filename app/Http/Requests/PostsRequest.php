@@ -25,8 +25,7 @@ class PostsRequest extends Request
     {
         return [
             'title' => 'required|min:3',
-            'body' => 'required',
-            'published_at' => 'required|date'
+            'body' => 'required'
         ];
     }
 }

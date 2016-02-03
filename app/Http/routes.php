@@ -17,4 +17,8 @@ Route::group(['middleware' => 'web'], function () {
 	# collection of post routes
 	Route::resource('posts', 'PostsController');
 
+	Route::get('tags/{tags}', 'TagsController@show');
+
+	\App\Online::registered()->get();
+
 });

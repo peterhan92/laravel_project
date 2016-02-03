@@ -13,12 +13,18 @@
 			<h5>Tags:</h5>
 			<ul>
 				@foreach ($post->tags as $tag)
-					<li>{{ $tag->name }}</li>
+					<li><a href="/tags/{{ $tag->name }}">{{ $tag->name }}</a></li>
 				@endforeach
 			</ul>
 		@endunless
 	<center>
-   		<button type='submit' onclick="window.location='{{ url("posts/$id/edit") }}'">Edit this Post</button>
+		<button class='btn btn-primary' type='submit' onclick="window.location='{{ url("posts/$id/edit") }}'">Edit Post</button>
+	
+   		{{ Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $id]]) }}
+   			{{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
+		{{ Form::close() }}
+
 	</center>
+
 	</div>
 @stop

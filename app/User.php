@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -30,4 +31,5 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Post');
     }
+    
 }
