@@ -34,4 +34,16 @@ class Post extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    # Get the tags associated with the given article
+    public function tags()
+    {
+        return $this-> belongsToMany('App\Tag')->withTimestamps();
+    }
+
+    #Get a list of tag ids associated with the current article
+    public function getTagListAttribute()
+    {
+        return $this->tags->lists('id')->all();
+    }
 }

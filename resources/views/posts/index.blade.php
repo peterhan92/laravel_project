@@ -1,18 +1,23 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
-	
-	<h1>Posts</h1>
-	<hr/>
-	
+
+<div class="panel-heading">Top Stories</div>
+
+<div class="panel-body">
 	@foreach ($posts as $post)
 		<article>
-			<h2>
+			<h3>
 				<a href="{{ url('/posts', $post->id) }}">{{ $post->title }}</a>
-			</h2>
-
+			</h3>
 			<div class="body">{{ $post->body }}</div>
 		</article>
+        <hr/>
 	@endforeach
+</div>
 
-@stop
+<center>
+    <button type='submit' onclick="window.location='{{ url("posts/create") }}'">Ask a Question</button>
+</center>
+<br>
+@endsection

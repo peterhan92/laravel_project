@@ -6,9 +6,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
 
     # main page
-    Route::get('/', function () {
-    	return view('/welcome');
-	});
+    Route::get('/', 'PostsController@index');
 
     # contact page
 	Route::get('contact', 'PagesController@contact');

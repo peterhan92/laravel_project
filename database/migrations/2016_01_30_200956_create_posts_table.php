@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->timestamp('published_at');
 
-            # when user is deleted all posts are deleted
+            # when user is deleted all posts are deleted as well
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
