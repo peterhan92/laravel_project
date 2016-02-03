@@ -16,6 +16,9 @@
 					<li>{{ $tag->name }}</li>
 				@endforeach
 			</ul>
-			@endunless
+		@endunless
+	<center>
+   		<button type='submit' onclick="window.location='{{ url("posts/$id/edit") }}'">Edit this Post</button>
+	</center>
 	</div>
 @stop

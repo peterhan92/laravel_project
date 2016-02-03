@@ -1,9 +1,15 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('content')
-		<h1>Contact Me!</h1>
-@stop
+		<div class="panel-heading"><h2>Contact Us</h2></div>
 
-@section('footer')
-	<script>alert('Contact form scripts');</script>
+	<div class="panel-body">
+	<ul>
+		Emails:
+			<li>peter.han@notQuora.com</li>
+			<li>john.doe@notQuora.com</li>
+			<li>jan.doe@notQuora.com</li>
+	</ul>
+
+	</div>
 @stop

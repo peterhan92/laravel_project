@@ -31,7 +31,7 @@ class PostsController extends Controller
     {
     	$post = Post::findorfail($id);
 
-    	return view('posts.show', compact('post'));
+    	return view('posts.show', compact('post', 'id'));
     }
 
     # display create post page
