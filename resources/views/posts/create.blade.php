@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="panel-heading"><h2>Ask a Question</h2></div>
+	<div class="panel-heading"><h2>Create a Question</h2></div>
 
 	<div class="panel-body">
 		{!! Form::open(['url' => 'posts']) !!}

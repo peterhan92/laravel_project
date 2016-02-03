@@ -13,7 +13,9 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
+        # visit the home page 
         $this->visit('/')
-             ->see('NotQuora');
+            # see "NotQuora"
+            ->see('NotQuora');
     }
 }

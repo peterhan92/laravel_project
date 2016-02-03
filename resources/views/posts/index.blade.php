@@ -11,13 +11,15 @@
 				<a href="{{ url('/posts', $post->id) }}">{{ $post->title }}</a>
 			</h3>
 			<div class="body">{{ $post->body }}</div>
+			<br>
+			- {{ $user = \App\User::find($post->user_id)->name }}
 		</article>
         <hr/>
 	@endforeach
 </div>
 
 <center>
-    <button type='submit' onclick="window.location='{{ url("posts/create") }}'">Ask a Question</button>
+    <button class='btn btn-primary' type='submit' onclick="window.location='{{ url("posts/create") }}'">Ask a Question</button>
 </center>
 <br>
 @endsection

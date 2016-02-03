@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Tag;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -22,21 +23,17 @@ class PostsController extends Controller
     public function index() 
     {
     	$posts = Post::latest('Updated_at')->get();
-        // if (count(Tag::all()) < 1) {
-        //     $tag = new Tag;
-        //     $tag->name = 'testing';
-        //     $tag->save();
-        // }
-        
-    	return view('posts.index')->with('posts', $posts);
+
+    	return view('posts.index', compact('posts'));
     }
 
     # display single post
     public function show($id) 
     {
     	$post = Post::findorfail($id);
+        $user = User::find($post->user_id);
 
-    	return view('posts.show', compact('post', 'id'));
+    	return view('posts.show', compact('post', 'id', 'user'));
     }
 
     # display create post page

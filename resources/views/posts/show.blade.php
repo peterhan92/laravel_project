@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	<div class="panel-heading"><h2>{{ $post->title }}</h2></div>
+	<div class="panel-heading"><h2>Title: {{ $post->title }} </h2></div>
 
 	<div class="panel-body">
 		<article>
@@ -17,6 +17,8 @@
 				@endforeach
 			</ul>
 		@endunless
+		<br>
+		Written by: {{ $user->name }}
 	<center>
 		<button class='btn btn-primary' type='submit' onclick="window.location='{{ url("posts/$id/edit") }}'">Edit Post</button>
 	
