@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="panel panel-default">
 	<div class="panel-heading"><h2>Create a Question</h2></div>
 
 	<div class="panel-body">
@@ -10,4 +11,5 @@
 
 		@include ('errors.list')
 	</div>
+</div>
 @stop

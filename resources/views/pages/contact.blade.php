@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-		<div class="panel-heading"><h2>Contact Us</h2></div>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2>Contact Us</h2></div>
 
 	<div class="panel-body">
 	<ul>
@@ -12,4 +13,5 @@
 	</ul>
 
 	</div>
+</div>
 @stop

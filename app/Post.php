@@ -11,7 +11,6 @@ class Post extends Model
     protected $fillable = [
 		'title',
 		'body'
-		// 'published_at'
     ];
 
     // # additional fields to treat as Carbon instances

@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-	
+<div class="panel panel-default">
+
 	<div class="panel-heading"><h2>Title: {{ $post->title }} </h2></div>
 
 	<div class="panel-body">
@@ -19,6 +20,7 @@
 		@endunless
 		<br>
 		Written by: {{ $user->name }}
+
 	<center>
 		<button class='btn btn-primary' type='submit' onclick="window.location='{{ url("posts/$id/edit") }}'">Edit Post</button>
 	
@@ -29,4 +31,5 @@
 	</center>
 
 	</div>
+</div>
 @stop

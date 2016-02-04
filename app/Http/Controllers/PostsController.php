@@ -7,7 +7,6 @@ use App\Tag;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 use App\Http\Requests\PostsRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,9 +30,10 @@ class PostsController extends Controller
     public function show($id) 
     {
     	$post = Post::findorfail($id);
+
         $user = User::find($post->user_id);
 
-    	return view('posts.show', compact('post', 'id', 'user'));
+    	return view('posts.show', compact('post', 'id', 'user', 'views'));
     }
 
     # display create post page
