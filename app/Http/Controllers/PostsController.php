@@ -38,7 +38,7 @@ class PostsController extends Controller
 
     # display create post page
     public function create() 
-    {
+    {   
         $tags = Tag::lists('name', 'id');
 
     	return view('posts.create', compact('tags'));

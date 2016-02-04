@@ -13,7 +13,7 @@ class UserTest extends PHPUnit_Framework_TestCase
 		$user = new User;
     	$user->name = "Peter Han";
     	$user->email = "peter.han@example.com";
-    	$user->password = "curious";
+    	$user->password = "password";
     	$this->user = $user;
 	}
 
@@ -25,5 +25,10 @@ class UserTest extends PHPUnit_Framework_TestCase
     public function testAuserHasemail()
     {
     	$this->assertEquals("peter.han@example.com", $this->user->email);
+    }
+
+    public function testAuserHasPassword()
+    {
+    	$this->assertEquals("password", $this->user->password);
     }
 }

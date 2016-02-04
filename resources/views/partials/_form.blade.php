@@ -22,7 +22,7 @@
 	<script>
 		$('#tag_list').select2({
 			placeholder: 'Please choose a tag',
-			data: 'id' = '1' 'text' = 'testing'
+			tags: true
 		});
 	</script>
 @endsection

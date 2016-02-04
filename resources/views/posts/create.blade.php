@@ -6,7 +6,7 @@
 
 	<div class="panel-body">
 		{!! Form::open(['url' => 'posts']) !!}
-			@include ('partials._form', ['submitButtonText' => 'Add New Posts'])
+			@include ('partials._form', ['submitButtonText' => 'Submit Post'])
 		{!! Form::close() !!}
 
 		@include ('errors.list')
